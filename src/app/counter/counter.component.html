@@ -1,2 +1,2 @@
 <h2>Compteur {{position}}</h2>
-<p>Valeur : {{CounterService[position]}} <button (click)="increment()"><b>+</b></button></p>
+<p>Valeur : {{CounterService.initial_value[position]}} <button (click)="increment()"><b>+</b></button><button (click)="decrement()"><b>-</b></button><button (click)="reset()"><b>reset</b></button></p>

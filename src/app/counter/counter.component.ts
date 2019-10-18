@@ -18,4 +18,12 @@ export class CounterComponent implements OnInit {
   increment() {
     this.CounterService.increment(this.position)
   }
+
+  decrement() {
+    this.CounterService.decrement(this.position)
+  }
+
+  reset() {
+    this.CounterService.reset(this.position)
+  }
 }
