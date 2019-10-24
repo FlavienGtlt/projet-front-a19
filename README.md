@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/144d1f74-5ee4-4b58-a334-a8fcad940912/deploy-status)](https://app.netlify.com/sites/projet-front-a19-gentilt/deploys)
+
 # Counters
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.12.
