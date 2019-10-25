@@ -1,0 +1,11 @@
+<mat-card class="counter-card">
+        <mat-card-header>
+          <h1>My counters</h1>
+        </mat-card-header>
+        <mat-card-actions>
+          <button mat-button (click)="resetAll()"><b>RESET ALL</b></button>  
+        </mat-card-actions>
+      </mat-card>
+<app-counter [position]='0'></app-counter>
+<app-counter [position]='1'></app-counter>
+<app-counter [position]='2'></app-counter>

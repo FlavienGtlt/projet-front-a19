@@ -1,0 +1,10 @@
+h1 {
+  color : #40E0D0;
+}
+
+.mat-button{
+    background: rgba(223, 27, 27, 0.151);
+    border: 2px solid black;
+    border-color: rgba(238, 14, 14, 0.842);
+    color: rgba(238, 14, 14, 0.842);
+  }

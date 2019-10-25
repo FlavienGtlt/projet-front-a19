@@ -1,1 +1,20 @@
-h2 {color : #4169E1}
+.mat-card{
+    margin: 2em;
+}
+
+.mat-button{
+    background: rgba(128, 156, 243, 0.192);
+    border: 2px solid black;
+}
+
+.mat-card-title{
+    line-height: 2;
+    color: #4169E1;
+    font-size: 28px;
+}
+
+.mat-card-content{
+    font-size: 18px;
+}
+
+  
