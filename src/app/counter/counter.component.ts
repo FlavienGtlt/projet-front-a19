@@ -22,7 +22,8 @@ export class CounterComponent implements OnInit {
   }
 
   increment() {
-    this.CounterService.increment(this.position)
+    //this.CounterService.increment(this.position)
+    this.counterService.increment().subscribe(counter => this.value = counter);
   }
 
   decrement() {
