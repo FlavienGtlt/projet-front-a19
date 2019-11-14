@@ -21,7 +21,7 @@ export class CounterService {
   }
   
   increment(id: number): Observable<Counter>{
-    return this.http.patch<Counter>(this.counterUrl + id + '.json', {});
+    return this.httpclient.patch<Counter>(this.counterUrl + id + '.json', {});
   }
   
   /*decrement(position: number): number{
@@ -29,7 +29,7 @@ export class CounterService {
     return this.initial_value[position]
   }*/
   
-  reset(position: number): number{
+  reset(position: number){
     /*this.initial_value[position]=0
     return this.initial_value[position]*/
   }

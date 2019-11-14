@@ -18,7 +18,6 @@ export class CounterComponent implements OnInit {
   constructor(public CounterService: CounterService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.counterService.getCounterValue(this.position)
     this.route.params.subscribe(
       () => {
         this.getCounter();
@@ -28,7 +27,7 @@ export class CounterComponent implements OnInit {
 
   getCounter() {
     this.counter.id = +this.route.snapshot.paramMap.get('id'); 
-    this.counterService.getCounter(this.counter.id).subscribe(counter => {this.counter = counter;});
+    this.CounterService.getCounter(this.counter.id).subscribe(counter => {this.counter = counter;});
   }
 	
   increment() {
