@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Counter } from './counter';
 import { Observable } from 'rxjs';
@@ -9,36 +9,35 @@ import { Observable } from 'rxjs';
 })
 export class CounterService {
 
-  public initial_value = [0,0,0]
+  //public initial_value = [0,0,0]
 
+  private counterUrl = 'https://lp4asgadot.herokuapp.com/counters/';
+  private countersUrl = 'https://lp4asgadot.herokuapp.com/counters.json';
+  
   constructor(private httpclient: HttpClient) { }
 
   resetAll(){
-    this.initial_value=[0,0,0]
+    //this.initial_value=[0,0,0]
   }
   
-/*
-  increment(position: number): number{
-    this.initial_value[position]++
-    return this.initial_value[position]
-  }
- */
-  
-  increment(): Observable<Counter>{
-    this.httpclient.patch("https://lp4asgadot.herokuapp.com/counters/47.json",{"value" : 1}).subscribe();
-    return this.httpclient.get<Counter>("https://lp4asgadot.herokuapp.com/counters/47.json");
+  increment(id: number): Observable<Counter>{
+    return this.http.patch<Counter>(this.counterUrl + id + '.json', {});
   }
   
-  decrement(position: number): number{
+  /*decrement(position: number): number{
     this.initial_value[position]--
     return this.initial_value[position]
-  }
+  }*/
+  
   reset(position: number): number{
-    this.initial_value[position]=0
-    return this.initial_value[position]
+    /*this.initial_value[position]=0
+    return this.initial_value[position]*/
   }
-  getCounterValue(id: number) : Observable<Counter> {
-    //return this.httpclient.get<Counter>("https://lp4asgadot.herokuapp.com/counters/"+id+".json");
-    return this.httpclient.get<Counter>("https://lp4asgadot.herokuapp.com/counters/47.json")
+  getCounter(id: number) : Observable<Counter> {
+    return this.httpclient.get<Counter>(this.counterUrl+id+".json");
+  }
+  
+  getCounters(): Observable<Counter[]> {
+    return this.httpclient.get<Counter[]>(this.countersUrl);
   }
 }

@@ -3,6 +3,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { AuthService } from '../auth.service';
+import { Counter } from '../counter';
+import { CounterService } from '../counter.service';
 
 
 @Component({
@@ -11,6 +13,8 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+	
+	counters: Array<Counter> = [];
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -18,9 +22,15 @@ export class NavbarComponent implements OnInit {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, public auth: AuthService) {}
+  constructor(private breakpointObserver: BreakpointObserver, public auth: AuthService, private counterService: CounterService) {}
 
   ngOnInit(){
-    
+    this.counterService.getCounters()
+      .subscribe((_counters) => {
+        _counters.forEach((_counter) => {
+          // ajout des compteurs dans le tableau
+          this.counters.push(_counter);
+        });
+      });
   }
 }

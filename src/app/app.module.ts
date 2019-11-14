@@ -15,6 +15,9 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ProfileComponent } from './profile/profile.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { CounterInfoComponent } from './counter-card/counter-card.component';
+import { Routes, RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -23,7 +26,8 @@ import { ProfileComponent } from './profile/profile.component';
     CounterComponent,
     NavbarComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+	CounterInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,8 @@ import { ProfileComponent } from './profile/profile.component';
     MatListModule,
     MatCardModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+	MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

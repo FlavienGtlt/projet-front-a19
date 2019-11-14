@@ -1,16 +1,14 @@
-<mat-card class="counter-card" *ngIf="value">
-    <mat-card-header>
-      <mat-card-title><b>{{"#"+value.id + " " + "Counter" + " " + value.name}}</b></mat-card-title>
-    </mat-card-header>
+<mat-card class="counter-card">
+    <mat-card-title><b>{{"#"+counter.id + " " + "Counter" + " " + counter.name}}</b></mat-card-title>
     <mat-card-content>
       <p><b>
-        <br> Value : {{value.value}}   <!-- CounterService.initial_value[position] -->
+        <br> Value : {{counter.value}}   <!-- CounterService.initial_value[position] -->
     </b></p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button (click)="increment()"><b>+</b></button>
+      <button mat-button (click)="increment()" [disabled]="counter.value == null"><b>+</b></button>
       <button mat-button (click)="decrement()"><b>-</b></button>
       <button mat-button (click)="reset()"><b>RESET</b></button>
-
+	  <a mat-button target="_blank" [href]="counter.url">Link to counter</a>
     </mat-card-actions>
   </mat-card>
