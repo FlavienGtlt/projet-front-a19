@@ -27,7 +27,7 @@ import { Routes, RouterModule } from '@angular/router';
     NavbarComponent,
     HomeComponent,
     ProfileComponent,
-	CounterInfoComponent
+	  CounterInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +41,7 @@ import { Routes, RouterModule } from '@angular/router';
     MatCardModule,
     HttpClientModule,
     AppRoutingModule,
-	MatMenuModule
+	  MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
