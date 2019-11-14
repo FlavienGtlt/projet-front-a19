@@ -6,7 +6,7 @@
           <button mat-button (click)="resetAll()" disabled><b>RESET ALL</b></button>  
         </mat-card-actions>
       </mat-card>
-<!--<app-counter [position]='1'></app-counter>
+<!-- <app-counter [position]='1'></app-counter>
 <app-counter [position]='2'></app-counter>
-<app-counter [position]='3'></app-counter>-->
-<app-counter *ngFor="let counter of counters" [position]="counter.id"></app-counter>
+<app-counter [position]='3'></app-counter> -->
+<app-counter-info *ngFor="let counter of counters" [position]="counter.id"></app-counter-info>
