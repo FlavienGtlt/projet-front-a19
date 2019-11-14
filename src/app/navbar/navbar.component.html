@@ -8,7 +8,7 @@
       <a mat-list-item href="#" routerLink="/"><b>Home</b></a>&nbsp;
       <a mat-list-item href="#" routerLink="profile" *ngIf="auth.loggedIn"><b>Profile</b></a>
       <a mat-list-item [matMenuTriggerFor]="menu">
-        Compteurs
+        <b>Counters</b>
         <mat-icon aria-hidden="false" aria-label="Example home icon">expand_more</mat-icon>
       </a>
       <mat-menu #menu="matMenu">
